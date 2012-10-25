@@ -174,46 +174,4 @@ public class S2 {
 		// do nothing, adjusted by letting tres be 60, firs 80, etc. and halv be
 		// -10.
 	}
-
 }
-
-// //dansk → nul
-// //| en2ni mer
-// //en2ni → en mer
-// //| et mer
-// //| to mer
-// //| tre mer
-// //| fire mer
-// //| fem mer
-// //| seks mer
-// //| syv mer
-// //| otte mer
-// //| ni mer
-// //| ti2nitten
-// //ti2nitten → ti
-// //| ellve
-// //| tolv
-// //| tretten
-// //| fjorten
-// //| femten
-// //| seksten
-// //| sytten
-// //| atten
-// //| nitten
-// //| tyve2halvfems
-// //mer → og tyve2halvfems (+ tiotal t, 20 ≤ t ≤ 90)
-// //| ε ( 0, dvs enbart en2ni)
-// //tyve2halvfems → tyve (20)
-// //| tredive (30)
-// //| fyrre (40)
-// //| fyrretyve (40)
-// //| halvtreds2halvfems emfas (tiotal t, 50 ≤ t ≤ 90)
-// //halvtreds2halvfems → halv halvmult (-0,5+...)
-// //| mult (...)
-// //mult → tres 3)
-// //| firs 4)
-// //| fjerds 4)
-// //halvmult → mult
-// //| fems 5)
-// //emfas → sindtyve (× 20)
-// //| ε (× 20)
