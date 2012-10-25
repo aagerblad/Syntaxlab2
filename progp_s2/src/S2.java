@@ -1,13 +1,22 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.EmptyStackException;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class S2 {
 
-	public static void main(String[] args) {
-		System.out.println(new S2().eval("et og firs"));
+	public static void main(String[] args) throws IOException {
+		File input = new File("src/dr.txt");
+		Scanner s = new Scanner(input);
+		while (s.hasNext()) {
+			System.out.println(new S2().eval(s.nextLine()));
+			
+		}
 	}
 	
 	private Stack<String> symbols;
