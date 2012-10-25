@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -16,6 +15,7 @@ public class S2 {
 		while (s.hasNext()) {
 			System.out.println(new S2().eval(s.nextLine()));
 		}
+		s.close();
 	}
 
 	private Stack<String> symbols;
@@ -142,6 +142,7 @@ public class S2 {
 		switch (symbols.peek()) {
 		case "halv":
 			val -= 10;
+			pop();
 			halvmult();
 			break;
 		default:
