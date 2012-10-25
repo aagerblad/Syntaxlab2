@@ -7,9 +7,9 @@ import java.util.Stack;
 public class S2 {
 
 	public static void main(String[] args) {
-		System.out.println(new S2().eval("et og firs"));
+		System.out.println(new S2().eval("et og fyrre"));
 	}
-	
+
 	private Stack<String> symbols;
 	private int val;
 
@@ -36,11 +36,27 @@ public class S2 {
 	 * Tries to peek the string on top of the symbols stack. Returns an empty
 	 * string if the stack contains no elements.
 	 * 
-	 * @return the peek of the symbols stack, an empty string if stack is empty.
+	 * @return the top element of the symbols stack, an empty string if stack is
+	 *         empty.
 	 */
 	private String peek() {
 		try {
 			return symbols.peek();
+		} catch (EmptyStackException e) {
+			return "";
+		}
+	}
+
+	/**
+	 * Tries to pop the string on top of the symbols stack. Returns an empty
+	 * string if the stack contains no elements.
+	 * 
+	 * @return the top element of the symbols stack, an empty string if stack is
+	 *         empty.
+	 */
+	private String pop() {
+		try {
+			return symbols.pop();
 		} catch (EmptyStackException e) {
 			return "";
 		}
@@ -59,16 +75,16 @@ public class S2 {
 	// @formatter:off
 	private void en2ni() {
 		switch(peek()) {
-		case "et": 		val += 1;	mer();	break;
-		case "en": 		val += 1;	mer();	break;
-		case "to": 		val += 2;	mer();	break;
-		case "tre": 	val += 3;	mer();	break;
-		case "fire": 	val += 4;	mer();	break;
-		case "fem": 	val += 5;	mer();	break;
-		case "seks": 	val += 6;	mer();	break;
-		case "syv": 	val += 7;	mer();	break;
-		case "otte":	val += 8;	mer();	break;
-		case "ni": 		val += 9;	mer();	break;
+		case "et": 		val += 1;	pop();	mer();	break;
+		case "en": 		val += 1;	pop();	mer();	break;
+		case "to": 		val += 2;	pop();	mer();	break;
+		case "tre": 	val += 3;	pop();	mer();	break;
+		case "fire": 	val += 4;	pop();	mer();	break;
+		case "fem": 	val += 5;	pop();	mer();	break;
+		case "seks": 	val += 6;	pop();	mer();	break;
+		case "syv": 	val += 7;	pop();	mer();	break;
+		case "otte":	val += 8;	pop();	mer();	break;
+		case "ni": 		val += 9;	pop();	mer();	break;
 		default:		
 			ti2nitten();
 		}
@@ -93,7 +109,7 @@ public class S2 {
 	// @formatter:on
 
 	private void mer() {
-		switch (peek()) {
+		switch (pop()) {
 		case "og":
 			tyve2halvfems();
 			break;
